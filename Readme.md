@@ -11,10 +11,8 @@
 
 ## Ops
 
-- [automation](https://github.com/yuhongchun/automation)
+- [Ops-Linux](ops/Readme.md)
 
 ## Certification
 
 - RHCE
-- RHCA
-
