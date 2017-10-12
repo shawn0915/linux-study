@@ -11,4 +11,4 @@
 
 ## Book List
 
-- [](www.broadview.com.cn/18863)
+- [完美应用SUSE Linux](www.broadview.com.cn/18863)
