@@ -1,14 +1,14 @@
 # ElasticSearch
 
-- [config](#config)
+- [Config](#config)
 - [port](#port)
 - [command](#command)
 - [rest](#rest)
-- [plugin](#plugin)
-- [ref](#ref)
-- [BookList](#booklist)
+- [Plugin](#plugin)
+- [REF](#ref)
+- [Book List](#booklist)
 
-## config
+## Config
 
 - config/elasticsearch.yml
 
@@ -64,13 +64,13 @@ vm.max_map_count = 262144
 vm.swappiness = 1
 ```
 
-Ps.reboot
+Ps.os reboot
 
 ## port
 
 listen 9200/9300
 
-## command
+## Command
 
 ```bash
 # start
@@ -78,10 +78,13 @@ listen 9200/9300
 ./bin/elasticsearch -d -p /path/elasticsearch.pid -Des.logger.level=DEBUG
 # shutdown
 
+# users
+./bin/x-pack/users list
 ```
 
 ## rest
 
+- pretty
 ```bash
 # pretty
 curl -XGET http://vm153:9200
@@ -94,14 +97,23 @@ http://vm153:9200/_template/filebeat?pretty
 http://vm153:9200/_xpack?pretty
 ## cluster
 http://vm153:9200/_cluster/state/nodes
-#
+```
+
+- auth
+```bash
 # auth
 curl -XGET http://vm153:9200/?auth_user=elastic&auth_password=changeme
 curl -XGET --user elastic:changeme http://vm153:9200/_cluster/health?pretty
-#
+```
+
+- search
+```bash
 # search
 http://vm153:9200/_search
-#
+```
+
+- monitor
+```bash
 # monitor
 ## index
 http://vm153:9200/_cat/indices?v
@@ -109,16 +121,33 @@ http://vm153:9200/_cat/indices?v
 http://vm153:9200/_cat/nodes?v
 ```
 
-# plugin
+- load filebeat template
+```bash
+curl -XPUT 'http://vm153:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
+```
+返回`{"acknowledged":true}`则表示成功。
+
+删除filebeat template
+```bash
+curl -XDELETE 'http://vm153:9200/filebeat-*'
+```
+
+# Plugin
 
 - [elasticsearch-head](https://github.com/mobz/elasticsearch-head)
 - [IK-Analyzer](http://code.csdn.net/openkb/p-IK%20Analyzer)
 
-## ref
+## REF
 
-- [lucene](http://lucene.apache.org/)
+> common
+
 - [github-es](https://github.com/elastic/elasticsearch)
 - [elastic-es](https://www.elastic.co/products/elasticsearch)
+- [ref-es](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
+
+> other
+
+- [lucene](http://lucene.apache.org/)
 - [download-es-1-7-5](https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-5)
 - [download-es-5-5-1](https://www.elastic.co/downloads/past-releases/elasticsearch-5-5-1)
 - [elastic中文社区](https://elasticsearch.cn/)

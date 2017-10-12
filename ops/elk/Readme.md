@@ -16,19 +16,7 @@
 
 ## REF
 
-- [official website](https://www.elastic.co/)
-- [guide](https://www.elastic.co/guide/index.html)
-
-
-
-```html
-
-
-https://www.elastic.co/guide/en/x-pack/5.5/index.html
-
-https://kibana.logstash.es/content/kibana/index.html
-
-http://blog.csdn.net/qq942477618/article/details/53518372
-https://my.oschina.net/itblog/blog/547250
-```
-
+- [elastic](https://www.elastic.co/)
+- [elastic-guide](https://www.elastic.co/guide/index.html)
+- [ELKstack 中文指南](https://www.gitbook.com/book/chenryn/elk-stack-guide-cn/details)
+- [elk5.0安装配置](http://blog.csdn.net/qq942477618/article/details/53518372)

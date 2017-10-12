@@ -1,9 +1,9 @@
-# kibana
+# Kibana
 
-- [config](#config)
-- [command](#command)
+- [Config](#config)
+- [Command](#command)
 
-## config
+## Config
 
 - config/kibana.yml
 
@@ -20,7 +20,7 @@ elasticsearch.password: "changeme"
 xpack.security.enabled: false
 ```
 
-## command
+## Command
 
 启动
 ```bash
