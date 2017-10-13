@@ -4,7 +4,7 @@
 
 - base
   - centos 7.3 (ip:vm153)
-  - [httpd 2.4.6](env-httpd.md)
+  - [httpd 2.4.28](env-httpd.md)
   - jdk 1.8.0_144
 - elastic-v5.5.1
   - [elasticsearch](elk-es.md)

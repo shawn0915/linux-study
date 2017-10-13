@@ -1,4 +1,4 @@
-# Linux Ops
+# Linux DevOps
 
 - [ELK](elk/Readme.md)
 

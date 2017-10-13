@@ -9,9 +9,9 @@
 - [Ubuntu](release-ubuntu/ubuntu.md)
 - Mint
 
-## Ops
+## DevOps
 
-- [Ops-Linux](ops/Readme.md)
+- [Linux-DevOps](devOps/Readme.md)
 
 ## Certification
 
