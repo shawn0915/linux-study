@@ -1,22 +1,30 @@
 # Logstash
 
-## Config
+## Start
 
-- config/startup.options
-
-```yaml
-LS_HOME=/data/elk/logstash-5.5.1
-
-LS_USER=elk
-LS_GROUP=elk
+- Hello World
+```bash
+./bin/logstash -e ''
+./bin/logstash -e 'input{stdin{}}output{stdout{codec=>rubydebug}}'
+```
+output:
+```
+{
+    "@timestamp" => 2017-10-13T02:52:39.854Z,
+      "@version" => "1",
+          "host" => "localhost.localdomain",
+       "message" => "hello world"
+}
 ```
 
-- config/logstash.yml
+- config
 
-```yaml
-http.host: "0.0.0.0"
+```bash
+bin/logstash -f agent.conf
+bin/logstash -f /etc/logstash.d/
 ```
 
 ## REF
 
 - [How Logstash Works](https://www.elastic.co/guide/en/logstash/current/pipeline.html)
+- [life-of-a-logstash-event](https://speakerdeck.com/elastic/life-of-a-logstash-event)
