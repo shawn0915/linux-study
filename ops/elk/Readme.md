@@ -6,12 +6,16 @@
   - centos 7.3 (ip:vm153)
   - [httpd 2.4.6](env-httpd.md)
   - jdk 1.8.0_144
-- elastic
-  - [elasticsearch-5.5.1](elk-es.md)
-  - [logstash-5.5.1](elk-logstash.md)
-  - [kibana-5.5.1](elk-kibana.md)
-  - [x-pack-5.5.1](elk-xpack.md)
-  - [filebeat-5.5.1](elk-filebeat.md)
+- elastic-v5.5.1
+  - [elasticsearch](elk-es.md)
+  - [logstash](elk-logstash.md)
+  - [kibana](elk-kbn.md)
+  - [x-pack](elk-xpack.md)
+  - beats
+    - [filebeat](elk-filebeat.md)
+    - [metricbeat](elk-metricbeat.md)
+    - [packetbeat](elk-packetbeat.md)
+    - [heartbeat](elk-heartbeat.md)
 
 
 ## REF

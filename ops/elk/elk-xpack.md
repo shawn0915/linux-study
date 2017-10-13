@@ -19,6 +19,11 @@
 ./kibana-5.5.1-linux-x86_64/bin/kibana-plugin install file:///data/elk/x-pack-5.5.1.zip
 ```
 
+- logstash
+```bash
+./logstash-5.5.1/bin/logstash-plugin install file:///data/elk/x-pack-5.5.1.zip
+```
+
 ## Auth
 
 - modify password

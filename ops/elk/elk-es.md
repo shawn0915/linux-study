@@ -121,13 +121,18 @@ http://vm153:9200/_cat/indices?v
 http://vm153:9200/_cat/nodes?v
 ```
 
-- load filebeat template
+- load template
 ```bash
-curl -XPUT 'http://vm153:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
+# filebeat
+curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
+# metricbeat
+curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/metricbeat?pretty' -d @metricbeat.template.json
+# heartbeat
+curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/heartbeat?pretty' -d @heartbeat.template.json
 ```
 返回`{"acknowledged":true}`则表示成功。
 
-删除filebeat template
+delete template
 ```bash
 curl -XDELETE 'http://vm153:9200/filebeat-*'
 ```
