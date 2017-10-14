@@ -4,15 +4,15 @@
 
 - Apache(versions >= 2.2.31 and >= 2.4.16)
 - Docker
-- HAProxy
-- MongoDB
-- MySQL
-- Nginx
+- HAProxy(1.6)
+- MongoDB(>= 2.8)
+- MySQL(>= 5.7.0)
+- Nginx(>= 1.9 and mod_stub_status)
 - php_fpm
-- PostgreSQL
-- Redis
-- System
-- ZooKeeper
+- PostgreSQL(>= 9)
+- Redis(>= 3)
+- System(Topbeat)
+- ZooKeeper(>= 3.4.0)
 
 ## Config
 
@@ -47,6 +47,17 @@ output.elasticsearch:
   password: "changeme"
 ```
 
+## beats-dashboards
+
+- import
+```bash
+./metricbeat-5.5.1-linux-x86_64/scripts/import_dashboards -user elastic -pass changeme -file beats-dashboards-5.5.1.zip
+```
+
+- Metricbeat - Apache HTTPD server status
+
+
 ## REF
 
 - [metricbeat-modules](https://www.elastic.co/guide/en/beats/metricbeat/current/metricbeat-modules.html)
+- [beats-dashboards](https://artifacts.elastic.co/downloads/beats/beats-dashboards/beats-dashboards-5.5.1.zip)

@@ -2,7 +2,7 @@
 
 - [Config](#config)
 - [port](#port)
-- [command](#command)
+- [Command](#command)
 - [rest](#rest)
 - [Plugin](#plugin)
 - [REF](#ref)
@@ -152,7 +152,7 @@ curl -XDELETE 'http://vm153:9200/filebeat-*'
 
 > other
 
-- [lucene](http://lucene.apache.org/)
+- [Lucene](http://lucene.apache.org/)
 - [download-es-1-7-5](https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-5)
 - [download-es-5-5-1](https://www.elastic.co/downloads/past-releases/elasticsearch-5-5-1)
 - [elastic中文社区](https://elasticsearch.cn/)

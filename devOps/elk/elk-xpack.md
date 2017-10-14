@@ -3,6 +3,7 @@
 - [Install](#install)
 - [Auth](#auth)
 - [License](#license)
+- [Module](#module)
 - [REF](#ref)
 
 ## Install
@@ -46,7 +47,15 @@ curl -XPUT -u elastic 'vm153:9200/_xpack/security/user/kibana/_password' -d '{
 curl -XPUT -u elastic 'http://vm153:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
 ```
 
+## Module
+
+### xpack-alerting
+
+watcher
+
+
 ## REF
 
 - [x-pack-guide](https://www.elastic.co/guide/en/x-pack/5.5/index.html)
 - [installing-license](https://www.elastic.co/guide/en/x-pack/current/installing-license.html)
+- [xpack-alerting](https://www.elastic.co/guide/en/x-pack/current/xpack-alerting.html#xpack-alerting)
