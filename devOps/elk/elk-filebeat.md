@@ -15,7 +15,7 @@ filebeat.prospectors:
   paths:
     - /var/log/httpd/*
 output.elasticsearch:
-  hosts: ["vm153:9200"]
+  hosts: ["elksrv:9200"]
   username: "elastic"
   password: "changeme"
 ```

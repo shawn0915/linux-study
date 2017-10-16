@@ -1,5 +1,11 @@
 # Logstash
 
+## Install
+
+```bash
+tar zxvf logstash-5.5.1.tar.gz -C ~/app
+```
+
 ## Start
 
 - Hello World
@@ -22,6 +28,18 @@ output:
 ```bash
 bin/logstash -f agent.conf
 bin/logstash -f /etc/logstash.d/
+```
+
+## grok
+
+- tool: grokdebug
+
+```
+https://raw.githubusercontent.com/logstash-plugins/logstash-patterns-core/master/patterns/grok-patterns
+
+https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
+
+http://grokdebug.herokuapp.com/
 ```
 
 ## REF

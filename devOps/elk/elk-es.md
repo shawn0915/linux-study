@@ -1,12 +1,19 @@
 # ElasticSearch
 
+- [Install](#install)
 - [Config](#config)
 - [port](#port)
 - [Command](#command)
-- [rest](#rest)
+- [api](#api)
 - [Plugin](#plugin)
 - [REF](#ref)
 - [Book List](#booklist)
+
+## Install
+
+```bash
+tar zxvf elasticsearch-5.5.1.tar.gz -C ~/app
+```
 
 ## Config
 
@@ -15,26 +22,27 @@
 ```yaml
 #grep ^[^#] elasticsearch.yml
 #
-cluster.name: ceb
-node.name: node
-path.data: /data/es
-path.logs: /data/logs/es
+cluster.name: elk
+node.name: node-1
+path.data: /elk/data/es
+path.logs: /elk/logs/es
 network.host: 0.0.0.0
 # cluster
-discovery.zen.ping.unicast.hosts: ["vm153:9300"]
+discovery.zen.ping.unicast.hosts: ["elksrv:9300"]
 discovery.zen.minimum_master_nodes: 1
-# x-pack
-xpack.security.enabled: true
-xpack.monitoring.enabled: true
-xpack.graph.enabled: true
-xpack.watcher.enabled: true
 #
-# 以下内容暂未添加
-# 用户认证模式，ldap、file、pki、ActiveDirectory等
-xpack.security.authc.realms:
-    file1:
-      type: file
-      order: 0
+# x-pack base
+# xpack.monitoring.enabled: true
+# x-park gold
+#xpack.security.enabled: true
+## 用户认证模式，ldap、file、pki、ActiveDirectory等
+#xpack.security.authc.realms:
+#    file1:
+#      type: file
+#      order: 0
+#xpack.watcher.enabled: true
+# x-park platinum
+#xpack.graph.enabled: true
 ```
 
 - config/jvm.options
@@ -46,25 +54,6 @@ xpack.security.authc.realms:
 -Xmx512m
 ```
 
-- /etc/security/limits.conf
-
-```
-* hard memlock unlimited
-* soft memlock unlimited
-* hard nofile 65536
-* soft nofile 65536
-*  - as unlimited
-```
-
-- /etc/sysctl.conf
-
-```
-fs.file-max = 2097152
-vm.max_map_count = 262144
-vm.swappiness = 1
-```
-
-Ps.os reboot
 
 ## port
 
@@ -77,64 +66,99 @@ listen 9200/9300
 ./bin/elasticsearch -d
 ./bin/elasticsearch -d -p /path/elasticsearch.pid -Des.logger.level=DEBUG
 # shutdown
-
+kill
 # users
 ./bin/x-pack/users list
 ```
 
-## rest
+## api
 
 - pretty
 ```bash
 # pretty
-curl -XGET http://vm153:9200
-curl -XGET http://vm153:9200/?pretty
-## filebeat
-http://vm153:9200/filebeat-*/_search?pretty
-## template
-http://vm153:9200/_template/filebeat?pretty
-## x-park
-http://vm153:9200/_xpack?pretty
+curl -XGET http://elksrv:9200
+http://elksrv:9200/?pretty
 ## cluster
-http://vm153:9200/_cluster/state/nodes
+http://elksrv:9200/_cluster/state/nodes
+http://elksrv:9200/_cluster/health?pretty
+## node
+http://elksrv:9200/_nodes/stats
+## filebeat
+http://elksrv:9200/filebeat-*/_search?pretty
+## x-park
+http://elksrv:9200/_xpack?pretty
+## template
+http://elksrv:9200/_template/filebeat?pretty
 ```
 
 - auth
 ```bash
 # auth
-curl -XGET http://vm153:9200/?auth_user=elastic&auth_password=changeme
-curl -XGET --user elastic:changeme http://vm153:9200/_cluster/health?pretty
+curl -XGET http://elksrv:9200/?auth_user=elastic&auth_password=changeme
+curl -XGET --user elastic:changeme http://elksrv:9200/_cluster/health?pretty
 ```
 
 - search
 ```bash
 # search
-http://vm153:9200/_search
+http://elksrv:9200/_search
+```
+
+- cat
+```bash
+# index
+http://elksrv:9200/_cat/indices?v
+# nodes
+http://elksrv:9200/_cat/nodes?v
+# others
+/_cat/nodes
+/_cat/shards
+/_cat/shards/{index}
+/_cat/aliases
+/_cat/aliases/{alias}
+/_cat/tasks
+/_cat/master
+/_cat/plugins
+/_cat/fielddata
+/_cat/fielddata/{fields}
+/_cat/pending_tasks
+/_cat/count
+/_cat/count/{index}
+/_cat/snapshots/{repository}
+/_cat/recovery
+/_cat/recovery/{index}
+/_cat/segments
+/_cat/segments/{index}
+/_cat/thread_pool
+/_cat/thread_pool/{thread_pools}/_cat/nodeattrs
+/_cat/allocation
+/_cat/repositories
+/_cat/health
+/_cat/indices
+/_cat/indices/{index}
 ```
 
 - monitor
 ```bash
-# monitor
-## index
-http://vm153:9200/_cat/indices?v
-## nodes
-http://vm153:9200/_cat/nodes?v
+# hot_threads
+# 该节点消耗资源最多的前三个线程的堆栈情况
+http://elksrv:9200/_nodes/_local/hot_threads?interval=1s
 ```
 
 - load template
 ```bash
 # filebeat
-curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
 # metricbeat
-curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/metricbeat?pretty' -d @metricbeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/metricbeat?pretty' -d @metricbeat.template.json
 # heartbeat
-curl -XPUT --user elastic:changeme 'http://vm153:9200/_template/heartbeat?pretty' -d @heartbeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/heartbeat?pretty' -d @heartbeat.template.json
 ```
 返回`{"acknowledged":true}`则表示成功。
 
 delete template
 ```bash
-curl -XDELETE 'http://vm153:9200/filebeat-*'
+curl -XDELETE 'http://elksrv:9200/filebeat-*'
 ```
 
 # Plugin

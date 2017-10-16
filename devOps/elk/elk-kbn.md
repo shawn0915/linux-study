@@ -3,6 +3,9 @@
 - [Config](#config)
 - [Command](#command)
 
+每次刷新都是重新计算。
+
+
 ## Config
 
 - config/kibana.yml
@@ -11,9 +14,9 @@
 #grep ^[^#] kibana.yml
 #
 server.port: 5601
-server.host: "vm153"
+server.host: "elksrv"
 # es
-elasticsearch.url: "http://vm153:9200"
+elasticsearch.url: "http://elksrv:9200"
 elasticsearch.username: "elastic"
 elasticsearch.password: "changeme"
 # x-park
@@ -31,3 +34,7 @@ nohup ./bin/kibana &
 ps -ef|grep kibana
 fuser -n tcp 5601
 ```
+
+## Monitor
+
+kbn状态页 `http://elksrv:5601/status`

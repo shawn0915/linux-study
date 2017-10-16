@@ -26,7 +26,7 @@ metricbeat.full.yml => metricbeat.yml
   period: 10s
 
   # Apache hosts
-  hosts: ["http://vm153:8080"]
+  hosts: ["http://elksrv:8080"]
 ```
 
 - mysql
@@ -41,7 +41,7 @@ metricbeat.full.yml => metricbeat.yml
 - es
 ```yaml
 output.elasticsearch:
-  hosts: ["vm153:9200"]
+  hosts: ["elksrv:9200"]
 
   username: "elastic"
   password: "changeme"

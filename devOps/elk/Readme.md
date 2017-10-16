@@ -3,7 +3,8 @@
 ## ENV
 
 - base
-  - centos 7.3 (ip:vm153)
+  - centos 7.3 (hostname:elksrv, user:elk)
+  - [sys-config](env-os.md)
   - [httpd 2.4.28](env-httpd.md)
   - jdk 1.8.0_144
 - elastic-v5.5.1

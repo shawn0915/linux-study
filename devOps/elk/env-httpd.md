@@ -23,8 +23,11 @@ make install
 - /usr/local/apache2/conf/httpd.conf
 ```bash
 # server
-port:8080
-ServerName vm153:8080
+port:80
+ServerName elksrv:8080
+# user
+User elk
+Group elk
 #
 # log
 ErrorLog "/var/log/apache2/error_log"
@@ -36,6 +39,7 @@ LoadModule status_module modules/mod_status.so
 LoadModule info_module modules/mod_info.so
 Include conf/extra/httpd-info.conf
 ```
+
 - httpd-info.conf
 ```yaml
 <Location /server-status>
@@ -58,5 +62,5 @@ Include conf/extra/httpd-info.conf
 ## URL
 
 ```bash
-http://vm153:8080/
+http://elksrv:8080/
 ```

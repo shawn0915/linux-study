@@ -30,12 +30,12 @@
 - modify password
 ```bash
 # elastic
-curl -XPUT -u elastic 'vm153:9200/_xpack/security/user/elastic/_password' -d '{
+curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/elastic/_password' -d '{
   "password" : "123456"
 }'
 
 # kibana
-curl -XPUT -u elastic 'vm153:9200/_xpack/security/user/kibana/_password' -d '{
+curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/kibana/_password' -d '{
   "password" : "123456"
 }'
 ```
@@ -44,18 +44,37 @@ curl -XPUT -u elastic 'vm153:9200/_xpack/security/user/kibana/_password' -d '{
 
 ```bash
 # curl -XPUT -u elastic 'http://<host>:<port>/_xpack/license' -H "Content-Type: application/json" -d @license.json
-curl -XPUT -u elastic 'http://vm153:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+curl -XPUT -u elastic 'http://elksrv:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+# license status
+http://elksrv:9200/_xpack/license
 ```
 
 ## Module
 
-### xpack-alerting
+### Monitoring
 
-watcher
+formerly Marvel
+
+### Management
+
+
+### Alerting
+
+via Watcher
+
+### Security
+
+formerly Shield
+
+### Dev Tools
+
+- Search Profiler
+- Grok Debugger
 
 
 ## REF
 
 - [x-pack-guide](https://www.elastic.co/guide/en/x-pack/5.5/index.html)
+- [subscriptions-license](https://www.elastic.co/subscriptions)
 - [installing-license](https://www.elastic.co/guide/en/x-pack/current/installing-license.html)
 - [xpack-alerting](https://www.elastic.co/guide/en/x-pack/current/xpack-alerting.html#xpack-alerting)
