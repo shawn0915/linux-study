@@ -1,4 +1,4 @@
-# httpd 2.4.28
+# Apache 2.4.28
 
 - [Install](#install)
 - [Config](#config)

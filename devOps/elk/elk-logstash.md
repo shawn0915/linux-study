@@ -27,6 +27,7 @@ output:
 
 ```bash
 ./bin/logstash -f logstash-apache-beats.conf
+nohup ./bin/logstash -f logstash-apache-beats.conf &
 ```
 
 ## config examples

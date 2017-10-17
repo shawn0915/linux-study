@@ -36,7 +36,7 @@ path.data: /elk/data/es
 # Path to log files:
 #
 #path.logs: /path/to/logs
-path.logs: /elk/logs/es
+path.logs: /elk/log/es
 #
 # ----------------------------------- Memory -----------------------------------
 #

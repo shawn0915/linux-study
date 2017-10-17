@@ -57,7 +57,7 @@ discovery.zen.minimum_master_nodes: 1
 
 ## port
 
-listen 9200/9300
+listen `9200/9300`
 
 ## Command
 
@@ -146,6 +146,8 @@ http://elksrv:9200/_nodes/_local/hot_threads?interval=1s
 ```
 
 - load template
+
+beat采集的数据会传送到LS，无需再载入模板。
 ```bash
 # filebeat
 curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
@@ -163,7 +165,7 @@ curl -XDELETE 'http://elksrv:9200/filebeat-*'
 
 # Plugin
 
-- [elasticsearch-head](https://github.com/mobz/elasticsearch-head)
+- [~~elasticsearch-head~~](https://github.com/mobz/elasticsearch-head)
 - [IK-Analyzer](http://code.csdn.net/openkb/p-IK%20Analyzer)
 
 ## REF
@@ -177,7 +179,7 @@ curl -XDELETE 'http://elksrv:9200/filebeat-*'
 > other
 
 - [Lucene](http://lucene.apache.org/)
-- [download-es-1-7-5](https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-5)
+- [~~download-es-1-7-5~~](https://www.elastic.co/downloads/past-releases/elasticsearch-1-7-5)
 - [download-es-5-5-1](https://www.elastic.co/downloads/past-releases/elasticsearch-5-5-1)
 - [elastic中文社区](https://elasticsearch.cn/)
 - [ElasticSearch 简单入门](http://www.oschina.net/translate/elasticsearch-getting-started?cmp)
@@ -186,4 +188,4 @@ curl -XDELETE 'http://elksrv:9200/filebeat-*'
 ## BookList
 
 - 《Elasticsearch服务器开发》
-- [Elasticsearch 权威指南（中文版）](https://es.xiaoleilu.com/)
+- [《Elasticsearch 权威指南（中文版）》](https://es.xiaoleilu.com/)

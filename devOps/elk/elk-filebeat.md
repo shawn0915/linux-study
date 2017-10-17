@@ -1,7 +1,7 @@
 # Filebeat
 
 - [Config](#config)
-- [Command](#command)
+- [Start](#start)
 
 ## Config
 
@@ -20,7 +20,7 @@ output.elasticsearch:
   password: "changeme"
 ```
 
-## Command
+## Start
 
 ```bash
 # start

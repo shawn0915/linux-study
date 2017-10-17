@@ -14,16 +14,18 @@
 ./elasticsearch-5.5.1/bin/elasticsearch-plugin install file:///data/elk/x-pack-5.5.1.zip 
 ```
 
+- logstash
+```bash
+./logstash-5.5.1/bin/logstash-plugin install file:///data/elk/x-pack-5.5.1.zip
+```
+
 - kibana
 
 ```bash
 ./kibana-5.5.1-linux-x86_64/bin/kibana-plugin install file:///data/elk/x-pack-5.5.1.zip
 ```
 
-- logstash
-```bash
-./logstash-5.5.1/bin/logstash-plugin install file:///data/elk/x-pack-5.5.1.zip
-```
+
 
 ## Auth
 
@@ -44,7 +46,7 @@ curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/kibana/_password' -d '{
 
 ```bash
 # curl -XPUT -u elastic 'http://<host>:<port>/_xpack/license' -H "Content-Type: application/json" -d @license.json
-curl -XPUT -u elastic 'http://elksrv:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+curl -XPUT -u elastic 'http://localhost:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
 # license status
 http://elksrv:9200/_xpack/license
 ```
