@@ -23,12 +23,18 @@ output:
 }
 ```
 
-- config
+- "-f"
 
 ```bash
-bin/logstash -f agent.conf
-bin/logstash -f /etc/logstash.d/
+./bin/logstash -f logstash-apache-beats.conf
 ```
+
+## config examples
+
+- [logstash-apache](conf/logstash-apache.conf)
+- [logstash-apache-beats](conf/logstash-apache-beats.conf)
+
+
 
 ## grok
 
@@ -46,3 +52,5 @@ http://grokdebug.herokuapp.com/
 
 - [How Logstash Works](https://www.elastic.co/guide/en/logstash/current/pipeline.html)
 - [life-of-a-logstash-event](https://speakerdeck.com/elastic/life-of-a-logstash-event)
+- [getting-started](https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html)
+- [config-examples](https://www.elastic.co/guide/en/logstash/current/config-examples.html)
