@@ -11,7 +11,7 @@
 
 ## DevOps
 
-- [Linux-DevOps](devOps/Readme.md)
+- [Linux-DevOps](devOps/README.md)
 
 ## Certification
 

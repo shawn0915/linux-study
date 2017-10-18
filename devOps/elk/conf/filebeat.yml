@@ -23,6 +23,7 @@ filebeat.prospectors:
     #- c:\programdata\elasticsearch\logs\*
     # apache2
     - /usr/local/apache2/logs/access_log
+    - /usr/local/apache2/logs/error_log
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.

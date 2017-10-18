@@ -24,7 +24,7 @@ tar xzvf metricbeat-5.5.1-linux-x86_64.tar.gz -C ~/app
 
 ## Config
 
-metricbeat.full.yml => metricbeat.yml
+metricbeat.full.yml => [metricbeat.yml](conf/metricbeat.yml)
 
 - apache
 
@@ -71,6 +71,8 @@ output.logstash:
 ```bash
 # start
 nohup ./metricbeat start &
+
+./metricbeat  -c metricbeat.yml -e
 ```
 
 ## beats-dashboards

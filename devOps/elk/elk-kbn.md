@@ -17,8 +17,8 @@ server.port: 5601
 server.host: "0.0.0.0"
 # es
 elasticsearch.url: "http://elksrv:9200"
-elasticsearch.username: "elastic"
-elasticsearch.password: "changeme"
+#elasticsearch.username: "elastic"
+#elasticsearch.password: "changeme"
 # x-park
 #xpack.security.enabled: false
 ```

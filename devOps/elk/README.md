@@ -13,10 +13,10 @@
   - [kibana](elk-kbn.md)
   - [x-pack](elk-xpack.md)
   - beats
-    - [filebeat](elk-filebeat.md)
-    - [metricbeat](elk-metricbeat.md)
-    - [packetbeat](elk-packetbeat.md)
-    - [heartbeat](elk-heartbeat.md)
+    - [filebeat](elk-beat-filebeat.md) -- 收集日志
+    - [metricbeat](elk-beat-metricbeat.md) -- 监听系统和服务参数
+    - [packetbeat](elk-beat-packetbeat.md) -- 监听网络
+    - [heartbeat](elk-beat-heartbeat.md) -- 心跳监测
 
 ## 举个栗子
 
