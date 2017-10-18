@@ -52,7 +52,7 @@ metricbeat.full.yml => [metricbeat.yml](conf/metricbeat.yml)
 
 ```yaml
 output.elasticsearch:
-  hosts: ["elksrv:9200"]
+  hosts: ["elksrv.es:9200"]
 
   username: "elastic"
   password: "changeme"
@@ -63,7 +63,7 @@ output.elasticsearch:
 ```yaml
 output.logstash:
 
-  hosts: ["elksrv:5044"]
+  hosts: ["elksrv.ls:5044"]
 ```
 
 ## Start
@@ -80,7 +80,7 @@ nohup ./metricbeat start &
 - 导入beats仪表板
 
 ```bash
-./scripts/import_dashboards -es http://elksrv:9200 -user elastic -pass changeme -file beats-dashboards-5.5.1.zip
+./scripts/import_dashboards -es http://elksrv.es:9200 -user elastic -pass changeme -file beats-dashboards-5.5.1.zip
 ```
 
 ```

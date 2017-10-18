@@ -14,7 +14,7 @@ heartbeat.monitors:
 - type: http
 
   # List or urls to query
-  urls: ["http://elksrv:9200", "http://elksrv", "http://elksrv:9600", "http://elksrv:5601"]
+  urls: ["http://elksrv.es:9200", "http://httpd.srv", "http://elksrv.ls:9600", "http://elksrv.kbn:5601"]
 
   # Configure task schedule
   schedule: '@every 10s'
@@ -45,7 +45,7 @@ heartbeat.monitors:
 #-------------------------- Elasticsearch output ------------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["elksrv:9200"]
+  hosts: ["elksrv.es:9200"]
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"

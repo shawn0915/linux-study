@@ -17,13 +17,13 @@ filebeat.prospectors:
     - /usr/local/apache2/logs/error_log
 
 #output.elasticsearch:
-#  hosts: ["elksrv:9200"]
+#  hosts: ["elksrv.elk:9200"]
 #  username: "elastic"
 #  password: "changeme"
 
 output.logstash:
   # The Logstash hosts
-  hosts: ["elksrv:5044"]
+  hosts: ["elksrv.ls:5044"]
 ```
 
 ## Start

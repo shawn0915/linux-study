@@ -3,7 +3,7 @@
 ## ENV
 
 - base
-  - centos 7.3 (hostname:elksrv, user:elk)
+  - centos 7.3 (user:elk)
   - [system config](env-os.md)
   - [Apache 2.4.28](env-apache2.md)
   - jdk 1.8.0_144

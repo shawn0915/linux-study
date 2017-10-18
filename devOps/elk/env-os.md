@@ -2,10 +2,13 @@
 
 追加域名解析到hosts文件。
 
-/etc/hosts
+- /etc/hosts
 
 ```
-127.0.0.1 elksrv
+127.0.0.1 elksrv.es
+127.0.0.1 elksrv.ls
+127.0.0.1 elksrv.kbn
+127.0.0.1 httpd.srv
 ```
 
 调整系统参数，以使ELK得以顺利安装配置运行。修改完成后需要重启才能生效。

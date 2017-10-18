@@ -28,7 +28,7 @@ path.data: /elk/data/es
 path.logs: /elk/logs/es
 network.host: 0.0.0.0
 # cluster
-discovery.zen.ping.unicast.hosts: ["elksrv:9300"]
+discovery.zen.ping.unicast.hosts: ["elksrv.es:9300"]
 discovery.zen.minimum_master_nodes: 1
 #
 # x-pack base
@@ -76,40 +76,40 @@ kill
 - pretty
 ```bash
 # pretty
-curl -XGET http://elksrv:9200
-http://elksrv:9200/?pretty
+curl -XGET http://elksrv.es:9200
+http://elksrv.es:9200/?pretty
 ## cluster
-http://elksrv:9200/_cluster/state/nodes
-http://elksrv:9200/_cluster/health?pretty
+http://elksrv.es:9200/_cluster/state/nodes
+http://elksrv.es:9200/_cluster/health?pretty
 ## node
-http://elksrv:9200/_nodes/stats
+http://elksrv.es:9200/_nodes/stats
 ## filebeat
-http://elksrv:9200/filebeat-*/_search?pretty
+http://elksrv.es:9200/filebeat-*/_search?pretty
 ## x-park
-http://elksrv:9200/_xpack?pretty
+http://elksrv.es:9200/_xpack?pretty
 ## template
-http://elksrv:9200/_template/filebeat?pretty
+http://elksrv.es:9200/_template/filebeat?pretty
 ```
 
 - auth
 ```bash
 # auth
-curl -XGET http://elksrv:9200/?auth_user=elastic&auth_password=changeme
-curl -XGET --user elastic:changeme http://elksrv:9200/_cluster/health?pretty
+curl -XGET http://elksrv.es:9200/?auth_user=elastic&auth_password=changeme
+curl -XGET --user elastic:changeme http://elksrv.es:9200/_cluster/health?pretty
 ```
 
 - search
 ```bash
 # search
-http://elksrv:9200/_search
+http://elksrv.es:9200/_search
 ```
 
 - cat
 ```bash
 # index
-http://elksrv:9200/_cat/indices?v
+http://elksrv.es:9200/_cat/indices?v
 # nodes
-http://elksrv:9200/_cat/nodes?v
+http://elksrv.es:9200/_cat/nodes?v
 # others
 /_cat/nodes
 /_cat/shards
@@ -142,7 +142,7 @@ http://elksrv:9200/_cat/nodes?v
 ```bash
 # hot_threads
 # 该节点消耗资源最多的前三个线程的堆栈情况
-http://elksrv:9200/_nodes/_local/hot_threads?interval=1s
+http://elksrv.es:9200/_nodes/_local/hot_threads?interval=1s
 ```
 
 - load template
@@ -150,17 +150,17 @@ http://elksrv:9200/_nodes/_local/hot_threads?interval=1s
 beat采集的数据会传送到LS，无需再载入模板。
 ```bash
 # filebeat
-curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv.es:9200/_template/filebeat?pretty' -d@/data/elk/filebeat-5.5.1-linux-x86_64/filebeat.template.json
 # metricbeat
-curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/metricbeat?pretty' -d @metricbeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv.es:9200/_template/metricbeat?pretty' -d @metricbeat.template.json
 # heartbeat
-curl -XPUT --user elastic:changeme 'http://elksrv:9200/_template/heartbeat?pretty' -d @heartbeat.template.json
+curl -XPUT --user elastic:changeme 'http://elksrv.es:9200/_template/heartbeat?pretty' -d @heartbeat.template.json
 ```
 返回`{"acknowledged":true}`则表示成功。
 
 delete template
 ```bash
-curl -XDELETE 'http://elksrv:9200/filebeat-*'
+curl -XDELETE 'http://elksrv.es:9200/filebeat-*'
 ```
 
 # Plugin

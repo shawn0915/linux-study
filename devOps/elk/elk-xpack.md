@@ -32,12 +32,12 @@
 - modify password
 ```bash
 # elastic
-curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/elastic/_password' -d '{
+curl -XPUT -u elastic 'elksrv.es:9200/_xpack/security/user/elastic/_password' -d '{
   "password" : "123456"
 }'
 
 # kibana
-curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/kibana/_password' -d '{
+curl -XPUT -u elastic 'elksrv.es:9200/_xpack/security/user/kibana/_password' -d '{
   "password" : "123456"
 }'
 ```
@@ -48,7 +48,7 @@ curl -XPUT -u elastic 'elksrv:9200/_xpack/security/user/kibana/_password' -d '{
 # curl -XPUT -u elastic 'http://<host>:<port>/_xpack/license' -H "Content-Type: application/json" -d @license.json
 curl -XPUT -u elastic 'http://localhost:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
 # license status
-http://elksrv:9200/_xpack/license
+http://elksrv.es:9200/_xpack/license
 ```
 
 ## Module

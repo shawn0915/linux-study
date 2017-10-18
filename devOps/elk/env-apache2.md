@@ -24,7 +24,7 @@ make install
 ```bash
 # server
 port:80
-ServerName elksrv:8080
+ServerName httpd.srv:80
 # user
 User elk
 Group elk
@@ -62,5 +62,5 @@ Include conf/extra/httpd-info.conf
 ## URL
 
 ```bash
-http://elksrv:8080/
+http://httpd.srv/
 ```
