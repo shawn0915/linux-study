@@ -31,12 +31,12 @@ node.name: node-1
 # Path to directory where to store the data (separate multiple locations by comma):
 #
 #path.data: /path/to/data
-path.data: /elk/data/es
+path.data: /data/data/es
 #
 # Path to log files:
 #
 #path.logs: /path/to/logs
-path.logs: /elk/log/es
+path.logs: /data/log/es
 #
 # ----------------------------------- Memory -----------------------------------
 #

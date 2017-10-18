@@ -1,5 +1,16 @@
 # env-os
 
+基本路径
+
+- path
+
+```
+/data
+├── app
+├── data
+└── log
+```
+
 追加域名解析到hosts文件。
 
 - /etc/hosts
@@ -35,3 +46,7 @@ fs.file-max = 2097152
 vm.max_map_count = 262144
 vm.swappiness = 1
 ```
+
+刷新参数
+
+    sysctl -p

@@ -83,7 +83,7 @@ metricbeat.modules:
   period: 10s
 
   # Apache hosts
-  hosts: ["http://127.0.0.1"]
+  hosts: ["http://httpd.srv"]
 
   # Path to server status. Default server-status
   #server_status_path: "server-status"
@@ -382,23 +382,23 @@ metricbeat.modules:
 # Multiple outputs may be used.
 
 #-------------------------- Elasticsearch output -------------------------------
-#output.elasticsearch:
+output.elasticsearch:
   # Boolean flag to enable or disable the output module.
-  #enabled: true
+  enabled: true
 
   # Array of hosts to connect to.
   # Scheme and port can be left out and will be set to the default (http and 9200)
   # In case you specify and additional path, the scheme is required: http://localhost:9200/path
   # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
-  #hosts: ["localhost:9200"]
+  hosts: ["elksrv.es:9200"]
 
   # Set gzip compression level.
   #compression_level: 0
 
   # Optional protocol and basic auth credentials.
   #protocol: "https"
-  #username: "elastic"
-  #password: "changeme"
+  username: "elastic"
+  password: "changeme"
 
   # Dictionary of HTTP parameters to pass within the url with index operations.
   #parameters:
@@ -508,12 +508,12 @@ metricbeat.modules:
 
 
 #----------------------------- Logstash output ---------------------------------
-output.logstash:
+#output.logstash:
   # Boolean flag to enable or disable the output module.
   #enabled: true
 
   # The Logstash hosts
-  hosts: ["elksrv.ls:5044"]
+  #hosts: ["elksrv.ls:5044"]
 
   # Number of workers per Logstash host.
   #worker: 1

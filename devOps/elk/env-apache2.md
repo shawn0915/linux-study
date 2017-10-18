@@ -23,11 +23,8 @@ make install
 - /usr/local/apache2/conf/httpd.conf
 ```bash
 # server
-port:80
+Listen:80
 ServerName httpd.srv:80
-# user
-User elk
-Group elk
 #
 # log
 ErrorLog "/var/log/apache2/error_log"
@@ -40,7 +37,7 @@ LoadModule info_module modules/mod_info.so
 Include conf/extra/httpd-info.conf
 ```
 
-- httpd-info.conf
+- conf/extra/httpd-info.conf
 ```yaml
 <Location /server-status>
     SetHandler server-status
@@ -63,4 +60,5 @@ Include conf/extra/httpd-info.conf
 
 ```bash
 http://httpd.srv/
+http://httpd.srv/server-status
 ```
