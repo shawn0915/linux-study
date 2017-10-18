@@ -1,5 +1,7 @@
 # linux-study
 
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=3600)](LICENSE)
+
 ## Release Version
 
 - [RHEL](release-rhel/rhel.md)
