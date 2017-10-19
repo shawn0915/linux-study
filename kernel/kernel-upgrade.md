@@ -1,6 +1,4 @@
-# kernel
-
-## kernel upgrade
+# kernel upgrade
 
 升级内核
 ```bash

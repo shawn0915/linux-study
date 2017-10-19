@@ -1,6 +1,5 @@
 # Red Hat Enterprise Linux
 
-- [kernel](kernel.md)
 - [command](command.md)
 
 
