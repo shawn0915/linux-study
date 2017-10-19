@@ -1,0 +1,14 @@
+filebeat.prospectors:
+
+- input_type: log
+  paths:
+    - /var/log/mysql/mysql-slow.log*
+    - /var/lib/mysql/hostname-slow.log
+  exclude_files: [".gz$"]
+  multiline:
+    pattern: "^# User@Host: "
+    negate: true
+    match: after
+
+output.logstash:
+  hosts: ["elksrv.ls:5044"]

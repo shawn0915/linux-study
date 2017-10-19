@@ -55,3 +55,5 @@ http://grokdebug.herokuapp.com/
 - [life-of-a-logstash-event](https://speakerdeck.com/elastic/life-of-a-logstash-event)
 - [getting-started](https://www.elastic.co/guide/en/logstash/current/getting-started-with-logstash.html)
 - [config-examples](https://www.elastic.co/guide/en/logstash/current/config-examples.html)
+- [logstash-patterns-httpd](https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/httpd)
+- [logstash-config-for-filebeat-modules](https://www.elastic.co/guide/en/logstash/5.6/logstash-config-for-filebeat-modules.html)
