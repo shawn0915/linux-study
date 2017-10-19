@@ -22,8 +22,8 @@ filebeat.prospectors:
     #- /var/log/*.log
     #- c:\programdata\elasticsearch\logs\*
     # apache2
-    - /usr/local/apache2/logs/access_log
-    - /usr/local/apache2/logs/error_log
+    - /usr/local/apache2/logs/access_log*
+    - /usr/local/apache2/logs/error_log*
 
   # Exclude lines. A list of regular expressions to match. It drops the lines that are
   # matching any regular expression from the list.
@@ -35,7 +35,7 @@ filebeat.prospectors:
 
   # Exclude files. A list of regular expressions to match. Filebeat drops the files that
   # are matching any regular expression from the list. By default, no files are dropped.
-  #exclude_files: [".gz$"]
+  exclude_files: [".gz$"]
 
   # Optional additional fields. These field can be freely picked
   # to add additional information to the crawled log files for filtering
