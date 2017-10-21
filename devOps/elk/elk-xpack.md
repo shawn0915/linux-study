@@ -46,7 +46,7 @@ curl -XPUT -u elastic 'elksrv.es:9200/_xpack/security/user/kibana/_password' -d 
 
 ```bash
 # curl -XPUT -u elastic 'http://<host>:<port>/_xpack/license' -H "Content-Type: application/json" -d @license.json
-curl -XPUT -u elastic 'http://localhost:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
+#curl -XPUT -u elastic 'http://localhost:9200/_xpack/license' -H "Content-Type: application/json" -d @license.json
 curl -XPUT -u elastic 'http://elksrv.es:9200/_xpack/license?acknowledge=true' -H "Content-Type: application/json" -d @license.json
 # license status
 http://elksrv.es:9200/_xpack/license
@@ -81,3 +81,4 @@ formerly Shield
 - [subscriptions-license](https://www.elastic.co/subscriptions)
 - [installing-license](https://www.elastic.co/guide/en/x-pack/current/installing-license.html)
 - [xpack-alerting](https://www.elastic.co/guide/en/x-pack/current/xpack-alerting.html#xpack-alerting)
+- [xpack-settings](https://www.elastic.co/guide/en/x-pack/current/xpack-settings.html)
