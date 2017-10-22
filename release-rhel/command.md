@@ -1,4 +1,10 @@
-# command
+# Command
+
+查询pid
+```bash
+PID=`ps -ef | grep -v grep | grep /data/apps/tomcat | awk '{print $2}'`
+```
+
 
 ```bash
 # apache性能测试工具ab
