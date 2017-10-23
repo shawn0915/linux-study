@@ -13,5 +13,5 @@
 
 ### FTP
 
-- [ftp-ibm-aix](ftp://ftp.software.ibm.com/aix)
-- [ftp-RPMS](ftp://ftp.software.ibm.com/aix/freeSoftware/aixtoolbox/RPMS)
+- ftp://ftp.software.ibm.com/aix
+- ftp://ftp.software.ibm.com/aix/freeSoftware/aixtoolbox/RPMS
