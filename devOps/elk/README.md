@@ -1,13 +1,13 @@
 # Elastic Stack(ELK)
 
-[![Version](https://img.shields.io/badge/ELK-5.5.1-green.svg)](./README.md)
+[![Version](../../svg/ELK-5.5.1-brightgreen.svg)]()
 
 ## ENV
 
 - base
   - centos 7.3 (user:elk)
   - [system config](env-os.md)
-  - [Apache 2.4.28](env-apache2.md)
+  - [Apache 2.4.28](https://github.com/shawn0915/middleware-study/blob/master/webServer/httpd/httpd.md)
   - jdk 1.8.0_144
 - elastic-v5.5.1
   - [elasticsearch](elk-es.md)

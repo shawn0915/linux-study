@@ -1,6 +1,7 @@
 # linux-study
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?maxAge=3600)](LICENSE)
+[![License](svg/license-MIT-blue.svg)](LICENSE)
+
 
 ## Linux
 
