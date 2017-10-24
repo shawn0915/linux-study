@@ -33,21 +33,13 @@ nohup ./bin/logstash -f logstash-apache-beats.conf &
 ## config examples
 
 - [logstash-apache](conf/logstash-apache.conf)
-- [logstash-apache-beats](conf/logstash-apache-beats.conf)
-
+- [logstash-apache-log](conf/logstash-apache-beats-v3.1.conf)
 
 
 ## grok
 
-- tool: grokdebug
+- [grok-patterns-4.1.0](grok/grok-patterns)
 
-```
-https://raw.githubusercontent.com/logstash-plugins/logstash-patterns-core/master/patterns/grok-patterns
-
-https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
-
-http://grokdebug.herokuapp.com/
-```
 
 ## REF
 
@@ -57,3 +49,11 @@ http://grokdebug.herokuapp.com/
 - [config-examples](https://www.elastic.co/guide/en/logstash/current/config-examples.html)
 - [logstash-patterns-httpd](https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/httpd)
 - [logstash-config-for-filebeat-modules](https://www.elastic.co/guide/en/logstash/5.6/logstash-config-for-filebeat-modules.html)
+
+### Grok
+
+- [~~logstash-grok-patterns~~](https://github.com/elastic/logstash/blob/v1.4.2/patterns/grok-patterns)
+- [logstash-plugins-grok-patterns](https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns)
+- [grok-express](https://doc.yonyoucloud.com/doc/logstash-best-practice-cn/filter/grok.html)
+- [grokdebug](http://grokdebug.herokuapp.com/)
+- [plugins-filters-grok](https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html)

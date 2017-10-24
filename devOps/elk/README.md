@@ -46,9 +46,11 @@
 - [~~elk5.0安装配置~~](http://blog.csdn.net/qq942477618/article/details/53518372)
 - [ls-filebeat-nginx](http://tchuairen.blog.51cto.com/3848118/1840596/)
 - [ameizi/ELK](https://github.com/ameizi/ELK)
-- docker-elk
-  - [elasticsearch-docker](https://github.com/elastic/elasticsearch-docker)
-  - [deviantony/docker-elk](https://github.com/deviantony/docker-elk)
+
+### docker-elk
+
+- [elasticsearch-docker](https://github.com/elastic/elasticsearch-docker)
+- [deviantony/docker-elk](https://github.com/deviantony/docker-elk)
 
 ## TODO
 
