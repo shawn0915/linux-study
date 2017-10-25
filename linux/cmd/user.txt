@@ -1,0 +1,53 @@
+用户和组管理
+
+添加一个账户
+	useradd -m ltw  参数-m用来设定系统添加账户时自动建立用户根目录
+
+	adduser
+
+修改ltw账户的 登录名称
+
+	usermod -l litingwei ltw
+
+修改litingwei账户的 登录目录 (注意：修改前需要提前手动建立好litingwei目录)
+
+	usermod -d /home/litingwei litingwei
+
+锁定用户litingwei账号密码
+
+	usermod -L litingwei 锁定后账号不可使用
+
+解锁用户litingwei账号密码
+
+	usermod -U litingwei
+
+
+
+添加一个分组
+
+	groupadd superman
+
+修改superman分组
+
+	groupmod -g 355 superman
+
+删除 superman 分组
+
+	groupdel superman
+
+
+修改root 密码（root密码尚未设定，需要设定密码后方可使用）
+
+	passwd root
+
+
+root ，litingwei 账户切换
+
+	su - root
+
+	或sudo -i 切换root
+
+
+删除litingwei账号
+
+	userdel -r litingwei (-r 连同用户目录一起删除)

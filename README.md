@@ -19,7 +19,9 @@
 
 ## DevOps
 
-- [DevOps-Linux](devOps/README.md)
+- CI/CD
+- [Docker](https://github.com/shawn0915/docker-study)
+- [Monitor](https://github.com/shawn0915/tools-study/blob/master/README.md#monitor)
 
 ## Certification
 
@@ -30,3 +32,7 @@
 
 - [kernel-pub](https://www.kernel.org/pub/)
 - [ibm-library](https://www.ibm.com/developerworks/cn/views/linux/libraryview.jsp)
+
+## BookList
+
+- [《Linux集群和自动化运维》](https://github.com/yuhongchun/automation)

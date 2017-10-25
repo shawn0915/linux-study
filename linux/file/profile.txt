@@ -1,0 +1,19 @@
+1	配置文件
+
+当我们登录Linux shell时，shell会执行一系列初始化动作，其中就包括读取配置文件，然后根据配置文件来设置环境信息。事实上，在登录shell时会读取两个配置文件：/etc/profile和用户目录下的配置文件（以.开头的隐藏文件.bash_profile），那他们之间的关系怎样呢？用户目录下还有哪些配置文件呢？今天我就给你一一道来。
+/etc/profile	--- 为系统的每个用户设置环境信息，对所有用户的登录shell都有效（全局配置文件）。此文件中设定的变量（全局）可以作用于任何用户，而.bash_profile和.bashrc中设定的变量（局部）只能作用于当前登录用户。/etc/profile和.bash_profile、.bashrc的关系类似于父子关系，具有继承特性。
+.bash_profile	--- 为当前用户设置环境信息，仅对当前用户的登录shell有效（局部配置文件）。
+.bashrc		--- .bash_profile只被登录shell读取并仅仅执行一次，如果在命令行上键入bash启动一个新的shell，这个新shell读取的是.bashrc而不是.bash_profile，将登录shell和运行一个子shell所需的配置文件分开可以获取非常灵活的配置策略，从而满足不同的场景。
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+.bash_history	--- 操作bash的历史记录
+.bash_logout	--- 当每次退出shell时，该文件被读取并执行，主要做一些扫尾的工作，比如：删除帐号内临时文件或记录登录系统所化时间等信息。
+/etc/bashrc	--- 和.bashrc的含义一样，只不过适用于所有的用户（全局）。
+	在登录Linux时，执行文件的顺序如下：
+	登录Linux ---> /etc/profile ---> /etc/profile.d/*.sh ---> $HOME/{.bash_profile | .bash_login | .profile} ---> $HOME/.bashrc ---> /etc/bashrc
+	事实上，很多情况下某些配置文件是一样的，比如.bashrc和.bash_profile，这时只需要在一个配置文件中执行另外一个配置文件就可以了，例如source .bashrc，或 ..bashrc（匿名命令）。
+【注意】
+经过编辑的.bash_profile文件，直到退出再次登录，该文件被重新读取后，.bash_profile中的内容才会生效。
+

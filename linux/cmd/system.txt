@@ -1,0 +1,50 @@
+系统管理命令
+
+stat 显示指定文件的相关信息
+	cd /home/shawn
+	stat familyA
+
+who、w 显示在线登录用户
+	who
+whoami 显示用户自己的身份
+hostname 显示主机名称
+	hostname
+	hostname -i 显示主机IP
+uname 显示系统信息
+	uname -a 显示全部信息 (内核名称，主机名，内核版本号，内核版本，硬件名，处理器类型，硬件平台类型，操作系统名称)
+top 显示当前系统中耗费资源最多的进程 动态显示过程，实时监控
+ps 显示瞬间进程状态
+	ps -aux  显示所有瞬间进程状态
+du 显示指定的文件（目录）已使用的磁盘空间的总量 .可以使用--help查看帮助
+	du
+	du familyA
+	du -h familyA
+df 显示文件系统磁盘空间的使用情况
+	df
+	df -h
+free 显示当前内存和交换空间的使用情况
+ifconfig 显示网络接口信息
+ping 测试网络的连通性
+netstat 显示网络状态信息
+
+
+系统信息监控
+1.1	Memory
+$free（关注swap）
+1.2	CPU
+$vmstat 1
+$top
+
+$w
+load average: 0.09, 0.03, 0.01
+第一位：表示最近1分钟平均负载
+第二位：表示最近5分钟平均负载
+第三位：表示最近15分钟平均负载
+
+查看cpu核数
+$grep 'model name' /proc/cpuinfo | wc -l
+1.3	IO
+$iostat -x 1（关注IOPS）
+
+安装iostat
+$yum install sysstat

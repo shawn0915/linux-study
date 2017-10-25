@@ -1,0 +1,21 @@
+Ubuntu软件包管理
+
+1.安装tree软件包
+sudo dpkg -i tree_1.5.3-1_i386.deb
+2.删除tree软件包
+sudo dpkg -r tree
+3.查看软件包中信息
+sudo dpkg -c tree_1.5.3-1_i386.deb
+4.查看Ubuntu系统已安装所有软件包列表
+sudo dpkg -l
+
+
+DEB 包 (Debian, Ubuntu 以及类似系统)
+dpkg -i package.deb 安装/更新一个 deb 包
+dpkg -r package_name 从系统删除一个 deb 包
+dpkg -l 显示系统中所有已经安装的 deb 包
+dpkg -l | grep httpd 显示所有名称中包含 "httpd" 字样的deb包
+dpkg -s package_name 获得已经安装在系统中一个特殊包的信息
+dpkg -L package_name 显示系统中已经安装的一个deb包所提供的文件列表
+dpkg --contents package.deb 显示尚未安装的一个包所提供的文件列表
+dpkg -S /bin/ping 确认所给的文件由哪个deb包提供

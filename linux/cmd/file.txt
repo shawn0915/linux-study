@@ -1,0 +1,164 @@
+文件目录操作指令
+
+进入 home/shawn 目录
+	cd /home/shawn
+ls 显示目录内容
+	ls
+显示目录全部属性内容
+	ls -lrt
+按照时间排序
+$ ls -rt
+mkdir 创建一个目录 家庭A：
+	mkdir familyA
+touch 新建空文件
+	touch father.txt 家庭A中有一个父亲
+	touch mother.txt 有一个母亲
+	touch son.txt 儿子
+	touch daughter.txt 女儿
+mkdir 创建一个目录
+	mkdir house 房子
+cd 切换目录
+	cd house
+mkdir 创建目录
+	mkdir kitchen 厨房
+	mkdir bathroom 卫生间
+	mkdir roomA
+	mkdir roomB
+	mkdir roomC
+	touch sofa.txt 沙发
+ls 显示目录内容：
+	ls 显示
+cd 切换目录
+	cd roomB
+touch 新建空文件
+	touch bed.txt
+	echo "Your are the best boy." > book.txt 建立带简单内容的文件
+	cat book.txt 查看文件内容
+cd 切换目录
+	cd .. 返回上一级目录
+	cd roomC
+touch 新建空文件
+	touch bed.txt
+	echo "Your are the best girl." > book.txt
+	cat book.txt
+	touch doll.txt
+rm 删除文件目录
+	rm doll.txt
+more less 分页显示
+	more book.txt
+wc 显示文档行数，字数，字符数
+	wc book.txt
+find 查找指定的文件
+	find -name book.txt
+grep 查找指定字符串
+	grep best book.txt
+pwd 显示当前目录
+tree 显示目录树
+rmdir 删除空目录
+	rmdir bathroom
+ln -s 建立软连接
+	ln -s /home/shawn/familyA/house/roomB /home/roomB
+	路径需要从根目录还是写
+
+显示出文件 /home/shawn/familyA/bank.txt 的权限
+
+	cd /home/shawn/familyA/
+	ls -l
+
+切换至litingwei用户
+
+	su litingwei
+
+用litingwei账户查看是否可以读写bank.txt
+
+	cat bank.txt
+
+	vim bank.txt 此时litingwei没有权限进行修改文件
+
+切换回 shawn
+	su shawn
+
+修改bank.txt 权限为 其他用户可读写
+
+	chmod o+w bank.txt
+
+再切换回litingwei
+
+	su litingwei
+
+修改bank.txt
+
+	vim bank.txt
+
+
+--- ====================================================================================
+
+更改权限的高级操作
+r 读权限。
+w 写权限。
+x 执行权限。
+s 文件属主和组set-ID。
+t 粘性位*。
+l 给文件加锁，使其他用户无法访问。
+u,g,o 针对文件属主、属组用户及其他用户的操作。
+
+*在列文件或目录时，有时会遇到“ t”位。“t”代表了粘性位。如果在一个目录上出现“t”位，这就意味着该目录中的文件只有其属主才可以删除，即使某个属组用户具有和属主同等的权限。不过有的系统在这一规则上并不十分严格。
+
+如果在文件列表时看到“ t”，那么这就意味着该脚本或程序在执行时会被放在交换区(虚存)。
+
+
+1,t 权限是粘着位，例：TMP目录下，任何人都有读写执行权限，但是不是任何人对里边的可写权限的文件就可以删除呢，当然不是了，这个就是粘着位的做用，只有所有者才有权删除自已的文件，当然，ROOT除外
+2,关于文件安全的另一种权限，
+i权限 也就是不可修改权限 例：chattr u+i aaa 则aaa文件就不可修改，无论任何人，如果删除就用u-i就好了
+a权限 也就是只追加权限， 对于日志系统很好用，这个权限让目标文件只能追加，不能删除，而且不能通过编辑器追加。方法和i权限一样加
+如果想要看某个文件是不是有这个权限，用lsattr filename就行了
+
+系统默认情况下建立文件与目录的权限是：
+#vi /etc/bashrc 可以看到一般用户是002 root用户是022
+说明：一般用户默认建立文件权限是666-002=664 建立目录权限是777-002=775
+
+root默认建立文件的权限就是666-022=644 建立的目录权限就是777-022=755
+大家可以在机器上试试。也可以去改一下这个bashrc文件。看看有什么变化。
+
+
+
+chmod 4755与chmod 755 的区别在于开头多了一位，这个4表示其他用户执行文件时，具有与所有者相当的权限。
+例如：root用户创建了一个上网认证程序netlogin，如果其他用户要上网也要用到这个程序，那就需要root用户运行chmod 755 netlogin命令使其他用户也能运行netlogin。
+但是netlogin执行时可能需要访问一些只有root用户才有权访问的文件，那么其他用户执行netlogin时可能因为权限不够还是不能上网。
+这种情况下，就可以用 chmod 4755 netlogin 设置其他用户在执行netlogin也有root用户的权限，从而顺利上网。
+chmod 4755是对文件设置的，使该文件执行时具有文件所有者的权限，
+chmod 2755是对目录设置的，使用户在该目录下创建的文件和该目录的属主组是同一个组，chmod 1755是防删除位，删除权限是由该用户所在组决定的；
+相应的chmod 4777后文件属性变为rwsr-xr-x，
+chmod 1777后文件属性变为rwxr-xr-t，
+chmod 2777后文件属性变为rwxr-sr-x
+
+
+
+应用实例一：
+1、用chattr命令防止系统中某个关键文件被修改
+# chattr +i /etc/fstab
+
+然后试一下rm mv rename等命令操作于该文件，都是得到Operation not permitted 的结果
+
+
+2、让某个文件只能往里面追加内容，不能删除，一些日志文件适用于这种操作
+# chattr +a /data1/user_act.log
+应用实例二：
+	[root@ticket-A ~]# passwd root
+Changing password for user root.
+New UNIX password:
+Retype new UNIX password:
+Sorry, passwords do not match
+New UNIX password:
+Retype new UNIX password:
+passwd: Authentication token manipulation error
+有的说是根目录空间满，或者是密码文件的权限的问题
+如果以前对系统做安全配置，把/etc/passwd, /etc/shadow 改为不可修改
+那就需要取消之前的修改，如下：
+[root@station22 ~]# lsattr /etc/passwd /etc/shadow ----i-------- /etc/passwd ----i-------- /etc/shadow
+[root@station22 ~]# chattr -i /etc/passwd [root@station22 ~]# chattr -i/etc/shadow
+[root@station22 ~]# lsattr /etc/passwd /etc/shadow ------------- /etc/passwd ------------- /etc/shadow
+再修改root的密码就可以。
+修改完之后，再执行
+[root@station22 ~]# chattr +i /etc/passwd [root@station22 ~]# chattr +i/etc/shadow
+

@@ -1,0 +1,33 @@
+
+
+
+上传iso至/opt
+
+挂载
+
+mkdir /mnt/rhel7.2
+mount -o loop /opt/rhel-server-7.2-x86_64-dvd.iso /mnt/rhel7.2
+
+
+1.	配置本地yum源
+
+yum-config-manager --add-repo=file:///mnt/rhel7.2
+
+echo “gpgcheck=0” >> /etc/yum.repo.d/mnt_rhel7.2_.repo
+
+
+2.	配置网络yum源
+
+mount -o loop /opt/rhel-server-7.2-x86_64-dvd.iso /opt/apache2/htdocs/rhel7.2
+
+cd /etc/yum.repo.d/
+vi rhel7.2.repo
+
+[rhel7.2]
+name=foo
+baseurl=http://yum.shawnyan.com/rhel7.2
+enabled=1
+gpgcheck=0
+
+echo “172.16.75.199	yum.shawnyan.com” >> /etc/hosts
+
