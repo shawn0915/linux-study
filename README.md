@@ -1,12 +1,12 @@
-# linux-study
+# Linux Study
 [![License](svg/license-MIT-blue.svg)](LICENSE)
 
 
-## Linux
+## Content
 
 - [Kernel](kernel/kernel.md)
 - [Linux](linux/linux.md)
-- Release Version
+- [Docker](https://github.com/shawn0915/docker-study)
 
 ## ReleaseVersion
 
@@ -20,11 +20,6 @@
 - [SUSE](release-suse/suse.md)
 - [Arch Linux](https://www.archlinux.org)
 
-## DevOps
-
-- CI/CD
-- [Docker](https://github.com/shawn0915/docker-study)
-- [Monitor](https://github.com/shawn0915/tools-study/blob/master/README.md#monitor)
 
 ## Certification
 
@@ -33,13 +28,18 @@
   - RHCE
   - RHCA
 
-## REF
+## Reference
 
 - [kernel-pub](https://www.kernel.org/pub/)
 - [ibm-library](https://www.ibm.com/developerworks/cn/views/linux/libraryview.jsp)
 - [linux-certifications](https://linoxide.com/linux-how-to/12-globally-recognized-linux-certifications/)
+- [Linux 系统管理员 2017 年的 10 个新决心](https://mp.weixin.qq.com/s/Cm_JnrRMn8b9YpJE-1BWLA)
 
-## BookList
+### DevOps
+
+- [某金融公司实践 | 从SRE&DevOps&PE谈如何颠覆应用运维认知](https://mp.weixin.qq.com/s/7X449MGZsNeLXtPtoIQnwA)
+
+## Books
 
 - 鸟哥的linux私房菜
 - [《Linux集群和自动化运维》](https://github.com/yuhongchun/automation)
