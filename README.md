@@ -34,6 +34,7 @@
 - [ibm-library](https://www.ibm.com/developerworks/cn/views/linux/libraryview.jsp)
 - [linux-certifications](https://linoxide.com/linux-how-to/12-globally-recognized-linux-certifications/)
 - [Linux 系统管理员 2017 年的 10 个新决心](https://mp.weixin.qq.com/s/Cm_JnrRMn8b9YpJE-1BWLA)
+- [Linux 发展史小览](https://mp.weixin.qq.com/s/EeFqX-9Qkd6TNWRaF7CUfQ)
 
 ### DevOps
 
