@@ -3,12 +3,12 @@
 
 - [YsST](ysst.md)
 
+## Books
 
-## REF
+- [完美应用SUSE Linux](www.broadview.com.cn/18863)
+
+## Reference
 
 - [official website](https://www.suse.com/)
 - [opensuse](https://www.opensuse.org/)
-
-## Book List
-
-- [完美应用SUSE Linux](www.broadview.com.cn/18863)
+- [suse/documentation](https://www.suse.com/documentation/)
