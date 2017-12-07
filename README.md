@@ -1,5 +1,4 @@
 # Linux Study
-[![License](svg/license-MIT-blue.svg)](LICENSE)
 
 
 ## Content
