@@ -3,7 +3,6 @@
 
 ## Content
 
-- [Kernel](kernel/kernel.md)
 - [Linux](linux/linux.md)
 - [Docker](https://github.com/shawn0915/docker-study)
 
@@ -20,12 +19,9 @@
 - [Arch Linux](https://www.archlinux.org)
 
 
-## Certification
+## Artical-Blog
 
-- Red Hat
-  - RHCSA
-  - RHCE
-  - RHCA
+- [升级CentOS 7.4内核版本的三种方案](https://github.com/shawn0915/mysqloffice/blob/master/redhat/a1-how-to-upgrade-centos-kernel.md)
 
 ## Reference
 
